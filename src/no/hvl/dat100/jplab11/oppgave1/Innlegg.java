@@ -3,7 +3,10 @@ package no.hvl.dat100.jplab11.oppgave1;
 import no.hvl.dat100.jplab11.common.TODO;
 
 public abstract class Innlegg {
-	
+	private int id;
+	private String bruker;
+	private String dato;
+	private int likes;
 	// TODO - deklarering av objektvariable
 	
 	public Innlegg() {
@@ -11,60 +14,70 @@ public abstract class Innlegg {
 	}
 	
 	public Innlegg(int id, String bruker, String dato) {
+		this.likes=0;
+		this.id=id;
+		this.bruker=bruker;
+		this.dato=dato;
 
 		// TODO 
-		throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
 	}
 
 	public Innlegg(int id, String bruker, String dato, int likes) {
+		this.id=id;
+		this.bruker=bruker;
+		this.dato=dato;
+		this.likes=likes;
 
 		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
 	}
 	
 	public String getBruker() {
+		return bruker;
 		
-		throw new UnsupportedOperationException(TODO.method());
 
 	}
 
 	public void setBruker(String bruker) {
-		throw new UnsupportedOperationException(TODO.method());
-	}
-
-	public String getDato() {
-		throw new UnsupportedOperationException(TODO.method());
+		this.bruker=bruker;
 		
 	}
 
+	public String getDato() {
+		return dato;
+	}
+
 	public void setDato(String dato) {
-		throw new UnsupportedOperationException(TODO.method());
+		this.dato=dato;
 	}
 
 	public int getId() {
-		throw new UnsupportedOperationException(TODO.method());
+		return id;
 
 	}
 
 	public int getLikes() {
-		throw new UnsupportedOperationException(TODO.method());
+		return likes;
 
 	}
 	
 	public void doLike () {
-		throw new UnsupportedOperationException(TODO.method());
+		likes++;
 	}
 	
 	public boolean erLik(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
-
+		if(innlegg.id==getId()) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 	
 	@Override
 	public String toString() {
-		
-		throw new UnsupportedOperationException(TODO.method());
+		String tekst=getId()+"\n"+getBruker()+"\n"+getDato()+"\n"+getLikes()+"\n";
+		return tekst;
 				
 	}
 	
