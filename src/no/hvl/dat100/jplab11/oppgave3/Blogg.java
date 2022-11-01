@@ -31,22 +31,34 @@ public class Blogg {
 	}
 	
 	public int finnInnlegg(Innlegg innlegg) {
+		for(int i=0;i<getAntall();i++) {
+			if(innleggsTabell[i].erLik(innlegg)) {
+				return i;
+			}
+			
+		}
+		return -1;
 
-		throw new UnsupportedOperationException(TODO.method());
 	}
 
 	public boolean finnes(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
+		int finnes=finnInnlegg(innlegg);
+		return finnes!=-1;
 	}
 
 	public boolean ledigPlass() {
-		throw new UnsupportedOperationException(TODO.method());
+		return(getSamling().length-getAntall()>0); 
 
 	}
 	
 	public boolean leggTil(Innlegg innlegg) {
+		if(!finnes(innlegg)) {
+			innleggsTabell[getAntall()]=innlegg;
+			nesteLedig+=1;
+			return true;
+		}
+		return false;
 
-		throw new UnsupportedOperationException(TODO.method());
 	}
 	
 	public String toString() {
