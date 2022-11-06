@@ -20,9 +20,29 @@ public class LesBlogg {
 	private static String TEKST = "TEKST";
 	private static String BILDE = "BILDE";
 
-	public static Blogg les(String mappe, String filnavn) {
+	public static Blogg les(String mappe, String filnavn) throws Exception {
 
-		throw new UnsupportedOperationException(TODO.method());
-
+//		BufferedReader reader = new BufferedReader(new FileReader(mappe+filnavn));
+		File file = new File (mappe + filnavn);
+		Scanner reader = new Scanner(file);
+		
+		
+		String line;
+		
+		while (reader.hasNextLine()) {
+			line = reader.nextLine();
+			System.out.println(line);
+		}
+		
+		
+		
+//		while ((line = reader.readLine()) != null) {
+//			line = line + reader.readLine();
+//			System.out.println(line);
+//		}
+		
+		reader.close();
+		
+		return null;
 	}
 }
